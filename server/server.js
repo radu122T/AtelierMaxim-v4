@@ -1,27 +1,26 @@
 const path=require("path")
 const express =require("express")
+const mongoose = require("mongoose")
+const postsRoute = require('./routes/posts')
+require('dotenv/config')
+
 const app = express()
 const publicPath = path.join(__dirname, "..","client", 'dist')
 const publicPath2 = path.join(__dirname, "..","client", 'public')
 const port = process.env.PORT || 3000
 
+
 app.use(express.static(publicPath))
 app.use(express.static(publicPath2))
 app.use(express.json())
-
+app.use('/api', postsRoute)
 
 app.get("*", (req,res) => {
     res.sendFile(path.join(publicPath, 'index.html'))
 })
 
-app.post('/api', (req,res) => {
-    
-    console.log(req.body)
-    res.json({
-        status:'success'
-    })
-})
 
+mongoose.connect(process.env.DB_CONNECTION, () => console.log('connected to DB!'))
 
 app.listen(port, () => {
     console.log('server is up')

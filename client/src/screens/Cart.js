@@ -49,7 +49,8 @@ const Cart = ({ cart }) => {
                 {if(formData.payment.validated)
                     {setError(false)
                         console.log({formData})
-                        sendInfo()}
+                        sendInfo()
+                        return}
                         
                 else{
                     setError(true)
@@ -59,6 +60,7 @@ const Cart = ({ cart }) => {
                 setError(false)
                 console.log({formData})
                 sendInfo()
+                return
             }
         
             setClicked(false)

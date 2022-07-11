@@ -4221,6 +4221,7 @@ var Cart = function Cart(_ref) {
               formData: formData
             });
             sendInfo();
+            return;
           } else {
             setError(true);
           }
@@ -4231,6 +4232,7 @@ var Cart = function Cart(_ref) {
           formData: formData
         });
         sendInfo();
+        return;
       }
 
       setClicked(false);
