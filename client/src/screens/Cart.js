@@ -47,8 +47,8 @@ const Cart = ({ cart }) => {
             if (!formData.shipping.validated) {setError(true)}
             if (formData.shipping.validated && !isChecked) {
                 {if(formData.payment.validated)
-                    {setError(false)
-                        console.log({formData})
+                    {
+                        setError(false)
                         sendInfo()
                         return}
                         
@@ -58,7 +58,6 @@ const Cart = ({ cart }) => {
             }}
             else if (formData.shipping.validated && isChecked) {
                 setError(false)
-                console.log({formData})
                 sendInfo()
                 return
             }
