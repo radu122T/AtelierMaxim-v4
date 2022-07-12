@@ -2,6 +2,7 @@ const path=require("path")
 const express =require("express")
 const mongoose = require("mongoose")
 const postsRoute = require('./routes/posts')
+const cors = require('cors')
 require('dotenv/config')
 
 const app = express()
@@ -9,7 +10,7 @@ const publicPath = path.join(__dirname, "..","client", 'dist')
 const publicPath2 = path.join(__dirname, "..","client", 'public')
 const port = process.env.PORT || 3000
 
-
+app.use(cors())
 app.use(express.static(publicPath))
 app.use(express.static(publicPath2))
 app.use(express.json())
