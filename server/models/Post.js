@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 const PostSchema = mongoose.Schema ({
-   
+    
     shippingNume: String,
     shippingPrenume: String,
     shippingEmail: String,
