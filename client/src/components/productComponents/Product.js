@@ -51,8 +51,9 @@ const Product = ({productData ,addToCart, loadCurrentItem,addDimension})=> {
                     <img onClick={()=> loadCurrentItem(productData)} src={productData.img} alt="produs"/>
                 </Link>
                 <div className="details">
-                    <p>{productData.desc}</p>
-                    
+                    <Link to={`/product/${productData.id}`}>
+                        <p onClick={()=> loadCurrentItem(productData)}>{productData.desc}</p>
+                    </Link>
                     <div className="productDetailsDimensionContainer">
                         <div className="productDetailsDimension">
                             
