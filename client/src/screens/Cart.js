@@ -6,7 +6,7 @@ import Nav from "../components/Nav"
 import { Link } from "react-router-dom"
 import PaymentForm from "../components/cartComponents/PaymentForm"
 import ShippingForm from "../components/cartComponents/ShippingForm"
-
+import {ToastContainer, toast, Zoom, Bounce,Flip} from "react-toastify"
 
 
 const Cart = ({ cart }) => {
@@ -50,6 +50,15 @@ const Cart = ({ cart }) => {
                     {
                         setError(false)
                         sendInfo()
+                        toast.success("Comanda a fost preluata, veti fi sunat pentru confirmare", {
+                            position: "top-center",
+                            autoClose: 10000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            });
                         return}
                         
                 else{
@@ -59,6 +68,15 @@ const Cart = ({ cart }) => {
             else if (formData.shipping.validated && isChecked) {
                 setError(false)
                 sendInfo()
+                toast.success("Comanda a fost preluata, veti fi sunat pentru confirmare", {
+                    position: "top-center",
+                    autoClose: 10000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    });
                 return
             }
         
@@ -135,12 +153,26 @@ const Cart = ({ cart }) => {
                     <span>Pret total: {totalPrice+20} lei</span>
                 </div>
                 <div className="paymentButton">
-                    <button onClick={handleSubmit} className="checkout">Plata cu cardul</button>
+                    <button onClick={handleSubmit} className="checkout">Plata ramburs</button>
                 </div>
                 {error && <div id="error">*Campurile pentru livrare nu sunt completate.</div>}
                 </div>}
             </div>
             <Footer />
+            <ToastContainer
+                toastStyle={{ backgroundColor: "white",color: "black" }}
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                transition={Flip}
+                limit={2}
+            />
         </div>
     )}
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import shopItemsData from "../../data/dataProduct"
 import Product from "../productComponents/Product"
 import { connect } from 'react-redux'
 
