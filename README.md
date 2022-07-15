@@ -1,11 +1,12 @@
 
 Atelier Maxim 
 
-AtelierMaxim is an e-commerce app that sells woodworking crafts made by eng. Sorin Maxim. The website was created using mobile-first approach.
+AtelierMaxim is an e-commerce app that sells woodworking crafts made by eng. Sorin Maxim. The website was created using mobile-first approach. 
 
 Working towards releasing MVP. This phase includes the following features/capabilities:
 - Add user login
 - Improve overall responsiveness 
+- Add commentaries
 
 Package dependencies
 front-end:     
